@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<db_conf>
+	<server>localhost</server>
+	<user>root</user>
+	<password></password>
+	<db>bloger</db>
+</db_conf>
