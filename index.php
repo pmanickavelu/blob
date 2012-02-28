@@ -82,18 +82,20 @@ function load_page()
 {
 	var width=window.innerWidth;
 	var height=window.innerHeight;
+	var w=width/1024;
+	var tw=((36*width/1024)/6)*10;
 	if(width<=4000 && width>=300)
 	{
 		document.getElementById("main_body").style.width=width;
 		document.getElementById("menu_side").style.width=width*0.3-15;
 		document.getElementById("content_block").style.width=width*0.7-30;
-		document.getElementById("content_block").style.fontSize=14*width/1024;
-		document.getElementById("menu_side").style.fontSize=14*width/1024;
-		document.getElementById("header").style.fontSize=36*width/1024;
+		document.getElementById("content_block").style.fontSize=14*w;
+		document.getElementById("menu_side").style.fontSize=14*w;
+		document.getElementById("header").style.fontSize=36*w;
+		document.getElementById("").style.borde
 	}
 	if(height<=2100 && height>=210)
 	{
-		var tw=((36*width/1024)/6)*10;
 		document.getElementById("main_body").style.height=height;
 		document.getElementById("header").style.height=tw;
 		document.getElementById("menu_side").style.height=height-tw-(15*3);
