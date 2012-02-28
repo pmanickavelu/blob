@@ -82,23 +82,25 @@ function load_page()
 {
 	var width=window.innerWidth;
 	var height=window.innerHeight;
+	var fac=width/1024;
+	var vh=15*fac;
 	if(width<=4000 && width>=300)
 	{
 		document.getElementById("main_body").style.width=width;
-		document.getElementById("menu_side").style.width=width*0.3-15;
+		document.getElementById("menu_side").style.width=width*0.3-fac;
 		document.getElementById("content_block").style.width=width*0.7-30;
-		document.getElementById("content_block").style.fontSize=14*width/1024;
-		document.getElementById("menu_side").style.fontSize=14*width/1024;
-		document.getElementById("header").style.fontSize=36*width/1024;
+		document.getElementById("content_block").style.fontSize=14*fac;
+		document.getElementById("menu_side").style.fontSize=14*fac;
+		document.getElementById("header").style.fontSize=36*fac;
 	}
 	if(height<=2100 && height>=210)
 	{
-		var tw=((36*width/1024)/6)*10;
+		var tw=((36*fac)/6)*10;
 		document.getElementById("main_body").style.height=height;
 		document.getElementById("header").style.height=tw;
-		document.getElementById("menu_side").style.height=height-tw-(15*3);
-		document.getElementById("content_block").style.height=height-tw-(15*3);
-		document.getElementById("content_innerblock").style.height=height-tw-(15*3);
+		document.getElementById("menu_side").style.height=height-tw-(vh*3);
+		document.getElementById("content_block").style.height=height-tw-(vh*3);
+		document.getElementById("content_innerblock").style.height=height-tw-(vh*3);
 	}
 }
 3032
