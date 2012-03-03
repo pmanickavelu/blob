@@ -1,5 +1,5 @@
 <?php
-require_once("config/db.php");
+//require_once("config/db.php");
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,8 +25,27 @@ require_once("config/db.php");
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgba(255,0,0,0.4); 
 }
+
+::-moz-appearnce-scrollbar {
+    width: 12px;
+	height:12px;
+}
+::-moz-appearnce-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+::-moz-appearnce-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,0,0,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-moz-appearnce-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
 body{
-	background: url('Pacific-Ocean-large.jpg');
+	background: url('bg_hi-res.jpg');
 	background-position:center;
 	background-repeat: no-repeat;
 }
@@ -36,8 +55,6 @@ body{
 	margin-top:-8px;
 	color: #FFFFFF;
 	min-height:210px
-	max-height:1986px;
-	max-width:3132px;
 	min-width:300px;
 }
 #header{
@@ -84,23 +101,37 @@ function load_page()
 	var height=window.innerHeight;
 	var w=width/1024;
 	var tw=((36*width/1024)/6)*10;
-	if(width<=4000 && width>=300)
+	if(width>=300)
 	{
+		document.getElementById("menu_side").removeAttribute("style");
+		document.getElementById("content_block").removeAttribute("style");
+		document.getElementById("header").removeAttribute("style");
+		document.getElementById("menu_side").setAttribute("style","border-radius:"+15*w+"px");
+		document.getElementById("content_block").setAttribute("style","border-radius:"+15*w+"px");
+		document.getElementById("header").setAttribute("style","border-radius:"+15*w+"px");
+
 		document.getElementById("main_body").style.width=width;
-		document.getElementById("menu_side").style.width=width*0.3-15;
-		document.getElementById("content_block").style.width=width*0.7-30;
+		document.getElementById("menu_side").style.width=width*0.3-(15*w);
+		document.getElementById("content_block").style.width=width*0.7-(30*w);
 		document.getElementById("content_block").style.fontSize=14*w;
 		document.getElementById("menu_side").style.fontSize=14*w;
 		document.getElementById("header").style.fontSize=36*w;
-		document.getElementById("").style.borde
+		document.getElementById("menu_side").style.marginLeft=15*w;
+		document.getElementById("content_block").style.marginLeft=15*w;
+		document.getElementById("content_block").style.marginRight=15*w;
+		document.getElementById("header").style.margin=15*w;
+		document.getElementById("content_innerblock").style.marginLeft=10*w;// 2/3rd of 15//
+		document.getElementById("content_innerblock").style.marginRight=10*w;
+		document.getElementById("menu_inner_side").style.marginLeft=10*w;
+		document.getElementById("menu_inner_side").style.marginRight=10*w;
 	}
-	if(height<=2100 && height>=210)
+	if(height>=210)
 	{
 		document.getElementById("main_body").style.height=height;
 		document.getElementById("header").style.height=tw;
-		document.getElementById("menu_side").style.height=height-tw-(15*3);
-		document.getElementById("content_block").style.height=height-tw-(15*3);
-		document.getElementById("content_innerblock").style.height=height-tw-(15*3);
+		document.getElementById("menu_side").style.height=height-tw-(15*3*w);
+		document.getElementById("content_block").style.height=height-tw-(15*3*w);
+		document.getElementById("content_innerblock").style.height=height-tw-(15*3*w);
 	}
 }
 3032
