@@ -102,6 +102,9 @@ function load_page()
 	var w=width/1024;
 	var tw=((36*width/1024)/6)*10;
 	if(width>=300)
+	var fac=width/1024;
+	var vh=15*fac;
+	if(width>=300)
 	{
 		document.getElementById("menu_side").removeAttribute("style");
 		document.getElementById("content_block").removeAttribute("style");
@@ -112,7 +115,7 @@ function load_page()
 
 		document.getElementById("main_body").style.width=width;
 		document.getElementById("menu_side").style.width=width*0.3-(15*w);
-		document.getElementById("content_block").style.width=width*0.7-(30*w);
+		document.getElementById("content_block").style.width=(width*0.7)-(30*w);
 		document.getElementById("content_block").style.fontSize=14*w;
 		document.getElementById("menu_side").style.fontSize=14*w;
 		document.getElementById("header").style.fontSize=36*w;
@@ -132,10 +135,14 @@ function load_page()
 		document.getElementById("menu_side").style.height=height-tw-(15*3*w);
 		document.getElementById("content_block").style.height=height-tw-(15*3*w);
 		document.getElementById("content_innerblock").style.height=height-tw-(15*3*w);
+		var tw=((36*fac)/6)*10;
+		document.getElementById("main_body").style.height=height;
+		document.getElementById("header").style.height=tw;
+		document.getElementById("menu_side").style.height=height-tw-(vh*3);
+		document.getElementById("content_block").style.height=height-tw-(vh*3);
+		document.getElementById("content_innerblock").style.height=height-tw-(vh*3);
 	}
 }
-3032
-1986
 </script>
 <body onLoad="load_page()" onResize="load_page()">
 <div id="main_body">
