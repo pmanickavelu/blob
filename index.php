@@ -6,13 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>My Bloger</title>
 </head>
-<style>
+<style type="text/css">
 ::-webkit-scrollbar {
-    width: 12px;
-	height:12px;
+    width: 1%;
+	height:1%;
 }
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 .5% rgba(0,0,0,0.3); 
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
@@ -20,131 +20,103 @@
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: rgba(255,0,0,0.8); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    -webkit-box-shadow: inset 0 0 .5% rgba(0,0,0,0.5); 
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgba(255,0,0,0.4); 
 }
-
-::-moz-appearnce-scrollbar {
-    width: 12px;
-	height:12px;
-}
-::-moz-appearnce-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-::-moz-appearnce-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: rgba(255,0,0,0.8); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
-::-moz-appearnce-scrollbar-thumb:window-inactive {
-	background: rgba(255,0,0,0.4); 
-}
 body{
-	background: url('bg_hi-res.jpg');
+	background: url('sombrero.jpg');
 	background-position:center;
-	background-repeat: no-repeat;
 }
 #main_body{
-	float:left;
-	margin-left:-8px;
-	margin-top:-8px;
-	color: #FFFFFF;
-	min-height:210px
-	min-width:300px;
+	float: left;
+	color: white;
+	width: 100%;
+	height: 100%;
 }
 #header{
 	font-family:"Comic Sans MS", cursive;
 	text-align:center;
 	background: #FFFFFF;
 	opacity: 0.6;
-	border-radius: 15px;
+	height:10%;
+	width:98%;
 	color: #000000;
-	margin: 15px;
+	margin: 1%;
 }
 #menu_side{
-	float:left;
-	background: #FFFFFF;
+	float: left;
+	background: white;
 	opacity: 0.6;
-	border-radius: 15px;
-	color: #000000;
-	margin:0px 0px 0px 15px;
-	min-height:100px;
-}
-#content_block{
-	float:right;
-	overflow-y: auto;
-	background: #FFFFFF;
-	opacity: 0.6;
-	border-radius: 15px;
-	color: #000000;
-	margin:0px 15px;
-	min-height:100px;
-}
-#content_innerblock{
-	margin:0px 10px;
-	overflow-y: auto;
+	color: black;
+	margin: 0px 0px 0px 1%;
+	height: 86%;
+	width: 24%;
 }
 #menu_inner_side{
-	margin:10px;
+	margin:4%;
+	overflow-y: auto;
+}
+#content_block{
+	float: right;
+	overflow-y: auto;
+	background: white;
+	opacity: 0.6;
+	color: black;
+	margin: 0px 1%;
+	height: 86%;
+	width: 73%;
+}
+#content_innerblock{
+	margin:0px 1.5%;
+	height: 100%;
 	overflow-y: auto;
 }
 </style>
-<script language="javascript">
-function load_page()
-{
-	var width=window.innerWidth;
-	var height=window.innerHeight;
-	var w=width/1024;
-	var tw=((36*width/1024)/6)*10;
-	if(width>=300)
-	var fac=width/1024;
-	var vh=15*fac;
-	if(width>=300)
-	{
-		document.getElementById("menu_side").removeAttribute("style");
-		document.getElementById("content_block").removeAttribute("style");
-		document.getElementById("header").removeAttribute("style");
-		document.getElementById("menu_side").setAttribute("style","border-radius:"+15*w+"px");
-		document.getElementById("content_block").setAttribute("style","border-radius:"+15*w+"px");
-		document.getElementById("header").setAttribute("style","border-radius:"+15*w+"px");
 
-		document.getElementById("main_body").style.width=width;
-		document.getElementById("menu_side").style.width=width*0.3-(15*w);
-		document.getElementById("content_block").style.width=(width*0.7)-(30*w);
-		document.getElementById("content_block").style.fontSize=14*w;
-		document.getElementById("menu_side").style.fontSize=14*w;
-		document.getElementById("header").style.fontSize=36*w;
-		document.getElementById("menu_side").style.marginLeft=15*w;
-		document.getElementById("content_block").style.marginLeft=15*w;
-		document.getElementById("content_block").style.marginRight=15*w;
-		document.getElementById("header").style.margin=15*w;
-		document.getElementById("content_innerblock").style.marginLeft=10*w;// 2/3rd of 15//
-		document.getElementById("content_innerblock").style.marginRight=10*w;
-		document.getElementById("menu_inner_side").style.marginLeft=10*w;
-		document.getElementById("menu_inner_side").style.marginRight=10*w;
-	}
-	if(height>=210)
-	{
-		document.getElementById("main_body").style.height=height;
-		document.getElementById("header").style.height=tw;
-		document.getElementById("menu_side").style.height=height-tw-(15*3*w);
-		document.getElementById("content_block").style.height=height-tw-(15*3*w);
-		document.getElementById("content_innerblock").style.height=height-tw-(15*3*w);
-		var tw=((36*fac)/6)*10;
-		document.getElementById("main_body").style.height=height;
-		document.getElementById("header").style.height=tw;
-		document.getElementById("menu_side").style.height=height-tw-(vh*3);
-		document.getElementById("content_block").style.height=height-tw-(vh*3);
-		document.getElementById("content_innerblock").style.height=height-tw-(vh*3);
-	}
+<script language="javascript" type="text/javascript">
+var rad;
+var hed;
+var men;
+var cont;
+function initliz()
+{
+	rad=15;
+	hed=36;
+	men=14;
+	cont=14;
 }
+function resize()
+{
+	initliz();
+	var w=window.innerWidth/1024;
+	var h=window.innerHeight/600;
+	var f=(w<h) ? w : h;
+	rad*=f;
+	var style="#header{";
+	style+="border-radius:"+rad+"px;";
+	style+="font-size:"+hed*f+"px;";
+	style+="}";
+	style+="#menu_side{";
+	style+="border-radius:"+rad+"px;";
+	style+="font-size:"+men*f+"px;";
+	style+="}";
+	style+="#content_block{";
+	style+="border-radius:"+rad+"px;";
+	style+="font-size:"+cont*f+"px;";
+	style+="}";
+document.getElementById("changed_style").innerText=style;
+}
+window.addEventListener("load",resize,false);
+window.addEventListener("resize",resize,false);
+
 </script>
-<body onLoad="load_page()" onResize="load_page()">
+</head>
+<body>
+<style type="text/css" id="changed_style">
+test content
+</style>
 <div id="main_body">
 <div id="header">
 The Blob Engine
@@ -183,3 +155,4 @@ The Blob Engine
 </div>
 </body>
 </html>
+
